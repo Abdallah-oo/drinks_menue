@@ -1,0 +1,13 @@
+import 'package:drinks_menue/features/ItemDetails/Presentation/views/item_details_view_body.dart';
+import 'package:flutter/material.dart';
+
+/// Entry point for the Item Details feature.
+class ItemDetailsView extends StatelessWidget {
+  const ItemDetailsView({super.key, required this.initialIndex});
+  final int initialIndex;
+
+  @override
+  Widget build(BuildContext context) {
+    return ItemDetailsViewBody(initialIndex: initialIndex);
+  }
+}

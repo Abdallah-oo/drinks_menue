@@ -1,5 +1,6 @@
-import 'package:drinks_menue/class/addprovider.dart';
-import 'package:drinks_menue/screens/cafu.dart';
+import 'package:drinks_menue/features/Home/Presentation/views/home_view.dart';
+import 'package:drinks_menue/features/ItemDetails/Presentation/provider/addprovider.dart';
+
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) {
-        return Addprovider();
+        return CartProvider();
       },
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         ),
-        home: Cafue(),
+        home: HomeView(),
       ),
     );
   }
