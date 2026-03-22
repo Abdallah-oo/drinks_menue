@@ -1,5 +1,6 @@
 import 'package:drinks_menue/features/ItemDetails/Presentation/views/item_details_view_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 /// Entry point for the Item Details feature.
 class ItemDetailsView extends StatelessWidget {
@@ -8,6 +9,9 @@ class ItemDetailsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ItemDetailsViewBody(initialIndex: initialIndex);
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.dark,
+      child: Scaffold(body: ItemDetailsViewBody(initialIndex: initialIndex)),
+    );
   }
 }

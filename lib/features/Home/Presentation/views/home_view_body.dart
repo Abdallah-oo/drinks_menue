@@ -51,7 +51,6 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           const SizedBox(height: AppSpacing.md),
           CategoryTabs(
             onCategoryChanged: (category) => setState(() {
-         
               _selectedTab = category;
             }),
           ),
