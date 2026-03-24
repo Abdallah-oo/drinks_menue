@@ -3,7 +3,7 @@ import 'package:drinks_menue/core/utils/app_spacing.dart';
 import 'package:drinks_menue/core/utils/app_text_style.dart';
 import 'package:drinks_menue/core/utils/custom_text.dart';
 import 'package:drinks_menue/features/Cart/Presentation/Views/cart_view.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/provider/addprovider.dart';
+import 'package:drinks_menue/features/ItemDetails/Presentation/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -48,10 +48,11 @@ class HomeAppBar extends StatelessWidget {
   }
 
   Widget _cartButton({required int cartCount, required BuildContext context}) {
+    final cartProvider = context.watch<CartProvider>();
     return GestureDetector(
       onTap: () => Navigator.push(
         context,
-        MaterialPageRoute(builder: (_) => const CartView()),
+        MaterialPageRoute(builder: (_) =>  ChangeNotifierProvider.value(value: cartProvider,child: CartView())),
       ),
       child: Stack(
         clipBehavior: Clip.none,

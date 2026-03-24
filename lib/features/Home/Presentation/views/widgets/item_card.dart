@@ -4,8 +4,10 @@ import 'package:drinks_menue/core/utils/app_spacing.dart';
 import 'package:drinks_menue/core/utils/app_text_style.dart';
 import 'package:drinks_menue/core/utils/custom_text.dart';
 import 'package:drinks_menue/features/Home/Data/item_model.dart';
+import 'package:drinks_menue/features/ItemDetails/Presentation/provider/cart_provider.dart';
 import 'package:drinks_menue/features/ItemDetails/Presentation/views/item_details_view.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ItemCard extends StatelessWidget {
   const ItemCard({super.key, required this.item});
@@ -13,13 +15,17 @@ class ItemCard extends StatelessWidget {
   final ItemModel item;
 
   void _openDetails(BuildContext context) {
+    final cartProvider = context.read<CartProvider>();
     final index = ItemModel.items.indexOf(item);
 
     Navigator.push(
       context,
       PageRouteBuilder(
-        pageBuilder: (_, animation, __) => ItemDetailsView(initialIndex: index),
-        transitionsBuilder: (_, animation, __, child) {
+        pageBuilder: (_, animation, _) => ChangeNotifierProvider.value(
+          value: cartProvider,
+          child: ItemDetailsView(initialIndex: index),
+        ),
+        transitionsBuilder: (_, animation, _, child) {
           return FadeTransition(
             opacity: CurvedAnimation(parent: animation, curve: Curves.easeOut),
             child: child,
@@ -54,7 +60,6 @@ class ItemCard extends StatelessWidget {
             children: [
               _CardContent(item: item),
               _DrinkImage(imageName: item.image),
-              
             ],
           ),
         ),

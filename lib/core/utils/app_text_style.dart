@@ -2,12 +2,6 @@ import 'package:drinks_menue/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 
-/// Central typography file.
-/// Uses DM Sans — a modern, geometric sans-serif with great readability.
-/// Add to pubspec.yaml:
-///   google_fonts: ^6.x.x
-/// Then: import 'package:google_fonts/google_fonts.dart';
-/// Replace TextStyle() calls with GoogleFonts.dmSans() for live builds.
 abstract final class AppTextStyles {
   // ─── Display ────────────────────────────────────────────────────────────────
   static const displayLarge = TextStyle(

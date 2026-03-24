@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 typedef OnFilterChanged = void Function(String value);
 
 class HomeSearchBar extends StatefulWidget {
-  const HomeSearchBar({required this.onQueryChanged});
+  const HomeSearchBar({super.key, required this.onQueryChanged});
   final OnFilterChanged onQueryChanged;
 
   @override

@@ -1,4 +1,4 @@
-import 'package:drinks_menue/features/ItemDetails/Presentation/provider/addprovider.dart';
+import 'package:drinks_menue/features/ItemDetails/Presentation/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 typedef OnFilterChanged = void Function(String value);
 
 class CategoryTabs extends StatefulWidget {
-  const CategoryTabs({required this.onCategoryChanged});
+  const CategoryTabs({super.key, required this.onCategoryChanged});
   final OnFilterChanged onCategoryChanged;
 
   @override

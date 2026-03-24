@@ -1,10 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-/// A smart text widget that:
-/// - Auto-detects RTL (Arabic) vs LTR direction
-/// - Auto-sizes font down to [minFontSize] before truncating
-/// - Always clips with ellipsis to prevent overflow
+
 class CustomText extends StatelessWidget {
   const CustomText({
     super.key,
@@ -16,11 +13,11 @@ class CustomText extends StatelessWidget {
     this.decoration,
   });
 
-  final String        text;
-  final TextStyle?    style;
-  final TextAlign?    align;
-  final int?          maxLines;
-  final double?       minFontSize;
+  final String text;
+  final TextStyle? style;
+  final TextAlign? align;
+  final int? maxLines;
+  final double? minFontSize;
   final TextDecoration? decoration;
 
   static TextDirection _directionOf(String text) {
@@ -33,12 +30,12 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return AutoSizeText(
       text,
-      textAlign:     align,
+      textAlign: align,
       textDirection: _directionOf(text),
-      maxLines:      maxLines ?? 1,
-      minFontSize:   minFontSize ?? 8,
-      overflow:      TextOverflow.ellipsis,
-      style:         decoration != null
+      maxLines: maxLines ?? 1,
+      minFontSize: minFontSize ?? 8,
+      overflow: TextOverflow.ellipsis,
+      style: decoration != null
           ? (style ?? const TextStyle()).copyWith(decoration: decoration)
           : style,
     );

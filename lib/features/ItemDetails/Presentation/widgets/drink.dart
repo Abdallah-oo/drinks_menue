@@ -19,7 +19,6 @@ class Drink extends StatelessWidget {
     final double screenwidth = context.screenWidth * 0.2;
 
     double drinkSize = screenwidth / (screenwidth - 15);
-    print(drinkSize);
     return PageView.builder(
       controller: controller,
       itemCount: drinks.length,
