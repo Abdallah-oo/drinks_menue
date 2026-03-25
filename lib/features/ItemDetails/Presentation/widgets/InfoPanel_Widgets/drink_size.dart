@@ -64,7 +64,7 @@ class DrinkSize extends StatelessWidget {
                             'assets/other/vector.svg',
                             height: opt.h,
                             colorFilter: ColorFilter.mode(
-                              sel ? Colors.white : AppColors.inkSecondary,
+                              sel ? AppColors.surface : AppColors.ink2,
                               BlendMode.srcIn,
                             ),
                           ),
@@ -73,8 +73,8 @@ class DrinkSize extends StatelessWidget {
                             text: opt.label,
                             style: AppTextStyles.labelMedium.copyWith(
                               color: sel
-                                  ? Colors.white
-                                  : AppColors.inkSecondary,
+                                  ? AppColors.surface
+                                  : AppColors.ink2,
                               fontWeight: sel
                                   ? FontWeight.w700
                                   : FontWeight.w500,

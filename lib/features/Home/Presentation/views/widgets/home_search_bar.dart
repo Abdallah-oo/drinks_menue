@@ -51,7 +51,7 @@ class _HomeSearchBarState extends State<HomeSearchBar> {
             hintStyle: AppTextStyles.bodyMedium,
             prefixIcon: const Icon(
               Icons.search_rounded,
-              color: AppColors.inkSecondary,
+              color: AppColors.ink2,
               size: 20,
             ),
             suffixIcon: ValueListenableBuilder<TextEditingValue>(
@@ -61,7 +61,7 @@ class _HomeSearchBarState extends State<HomeSearchBar> {
                 return IconButton(
                   icon: const Icon(
                     Icons.close_rounded,
-                    color: AppColors.inkSecondary,
+                    color: AppColors.ink2,
                     size: 18,
                   ),
                   onPressed: () {

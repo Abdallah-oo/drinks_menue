@@ -18,7 +18,7 @@ abstract final class AppShadows {
 
   static const List<BoxShadow> button = [
     BoxShadow(
-      color: Color(0x402DBD6E), // primary @ 25%
+      color: AppColors.primaryDark, 
       blurRadius: 12,
       offset: Offset(0, 6),
     ),

@@ -72,7 +72,7 @@ class HomeAppBar extends StatelessWidget {
                 child: CustomText(
                   text: '$cartCount',
                   style: const TextStyle(
-                    color: Colors.white,
+                    color: AppColors.surface,
                     fontSize: 10,
                     fontWeight: FontWeight.w800,
                     height: 1,

@@ -58,8 +58,8 @@ class ItemCard extends StatelessWidget {
           child: Stack(
             clipBehavior: Clip.none,
             children: [
-              _CardContent(item: item),
-              _DrinkImage(imageName: item.image),
+              _cardContent(item: item),
+              _drinkImage(imageName: item.image),
             ],
           ),
         ),
@@ -69,7 +69,7 @@ class ItemCard extends StatelessWidget {
 }
 
 // ─── Card Content ──────────────────────────────────────────────────────────────
-Widget _CardContent({required ItemModel item}) {
+Widget _cardContent({required ItemModel item}) {
   return Padding(
     // Left padding reserves space for the overflowing drink image
     padding: const EdgeInsets.only(
@@ -103,12 +103,12 @@ Widget _CardContent({required ItemModel item}) {
               const SizedBox(height: AppSpacing.md),
               Row(
                 children: [
-                  _PriceChip(price: item.price),
+                  _priceChip(price: item.price),
                   Spacer(),
                   const Icon(
                     Icons.arrow_forward_ios_rounded,
                     size: 17,
-                    color: AppColors.tabTextUnselected,
+                    color: AppColors.ink2,
                   ),
                 ],
               ),
@@ -122,7 +122,7 @@ Widget _CardContent({required ItemModel item}) {
 }
 
 // ─── Price Chip ────────────────────────────────────────────────────────────────
-Widget _PriceChip({required String price}) {
+Widget _priceChip({required String price}) {
   return Container(
     padding: const EdgeInsets.symmetric(
       horizontal: AppSpacing.sm + 2,
@@ -137,7 +137,7 @@ Widget _PriceChip({required String price}) {
 }
 
 // ─── Drink Image ───────────────────────────────────────────────────────────────
-Widget _DrinkImage({required String imageName}) {
+Widget _drinkImage({required String imageName}) {
   return Positioned(
     left: 0,
     top: -30,

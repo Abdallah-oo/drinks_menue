@@ -1,3 +1,4 @@
+import 'package:drinks_menue/core/themes/colors.dart';
 import 'package:drinks_menue/features/Home/Data/item_model.dart';
 import 'package:drinks_menue/features/ItemDetails/Presentation/provider/size_and_qty_provider.dart';
 import 'package:drinks_menue/features/ItemDetails/Presentation/widgets/drink.dart';
@@ -7,28 +8,9 @@ import 'package:drinks_menue/features/ItemDetails/Presentation/widgets/top_bar.d
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-const List<Color> _kBgTints = [
-  Color(0xFFEAF7EE),
-  Color(0xFFEAF3FF),
-  Color(0xFFFFF4EA),
-  Color(0xFFFFEAEA),
-  Color(0xFFEAFFF7),
-  Color(0xFFF5EAFF),
-  Color(0xFFFFFBEA),
-  Color(0xFFEAF7EE),
-  Color(0xFFEAF3FF),
-  Color(0xFFFFF4EA),
-  Color(0xFFFFEAEA),
-  Color(0xFFEAFFF7),
-  Color(0xFFF5EAFF),
-  Color(0xFFFFFBEA),
-  Color(0xFFEAF7EE),
-  Color(0xFFEAF3FF),
-  Color(0xFFFFF4EA),
-  Color(0xFFFFEAEA),
-];
+const List<Color> _kBgTints = AppColors.drinkBackground;
 
-Color _tintFor(int index) => _kBgTints[index % _kBgTints.length];
+Color? _tintFor(int index) => _kBgTints[index];
 
 class ItemDetailsViewBody extends StatefulWidget {
   const ItemDetailsViewBody({super.key, required this.initialIndex});
@@ -52,7 +34,6 @@ class _ItemDetailsViewBodyState extends State<ItemDetailsViewBody> {
     _pageController =
         PageController(initialPage: widget.initialIndex, viewportFraction: 0.50)
           ..addListener(() {
-        
             setState(() => _currentPage = _pageController.page ?? _currentPage);
           });
   }
@@ -67,17 +48,18 @@ class _ItemDetailsViewBodyState extends State<ItemDetailsViewBody> {
   Widget build(BuildContext context) {
     final int current = _currentPage.round();
 
-    final Color bgTint = _tintFor(current);
+    final Color bgTint = _tintFor(current) ?? AppColors.surface;
 
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 400),
+      duration: const Duration(milliseconds: 600),
       curve: Curves.easeInOut,
       color: bgTint,
       child: SafeArea(
         child: Column(
           children: [
+            //app bar
             TopBar(current: current, total: _items.length),
-
+           //drink view
             Expanded(
               child: Drink(
                 drinks: _items,
@@ -85,14 +67,12 @@ class _ItemDetailsViewBodyState extends State<ItemDetailsViewBody> {
                 curruntPage: _currentPage,
               ),
             ),
-
+           //drinks dots
             DrinksDots(count: _items.length, current: _currentPage),
-
+           //info and and to cart btn
             ChangeNotifierProvider(
-            
               create: (context) => SizeAndQtyProvider(),
               child: InfoPanel(
-              
                 items: _items,
                 curruntIndex: _currentPage.round(),
               ),

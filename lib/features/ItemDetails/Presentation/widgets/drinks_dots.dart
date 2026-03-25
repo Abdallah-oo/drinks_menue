@@ -30,7 +30,7 @@ class DrinksDots extends StatelessWidget {
               width: i == cur ? 24 : 6,
               height: 6,
               decoration: BoxDecoration(
-                color: i == cur ? AppColors.primary : AppColors.inkDisabled,
+                color: i == cur ? AppColors.ink2 : AppColors.inkDisabled,
                 borderRadius: BorderRadius.circular(AppSpacing.radiusFull),
               ),
             ),

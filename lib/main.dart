@@ -1,3 +1,4 @@
+import 'package:drinks_menue/core/themes/colors.dart';
 import 'package:drinks_menue/features/Home/Presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.background),
       ),
       home: HomeView(),
     );

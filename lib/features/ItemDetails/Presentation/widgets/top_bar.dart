@@ -19,7 +19,7 @@ class TopBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           // ── Back button ─────────────────────────────────────────────────
-          _CircleBtn(
+          _circleBtn(
             icon: Icons.arrow_back_ios_new_rounded,
             onTap: () => Navigator.pop(context),
           ),
@@ -51,9 +51,9 @@ class TopBar extends StatelessWidget {
     );
   }
 
-  Widget _CircleBtn({required IconData icon, required VoidCallback onTap}) {
+  Widget _circleBtn({required IconData icon, required VoidCallback onTap}) {
      return Material(
-      color: Colors.white,
+      color: AppColors.surface,
       shape: const CircleBorder(),
       elevation: 2,
       shadowColor: const Color(0x22000000),
@@ -62,7 +62,7 @@ class TopBar extends StatelessWidget {
         onTap: onTap,
         child: Padding(
           padding: const EdgeInsets.all(AppSpacing.sm + 2),
-          child: Icon(icon, size: 17, color: AppColors.ink),
+          child: Icon(icon, size: 17, color: AppColors.ink1),
         ),
       ),
     );

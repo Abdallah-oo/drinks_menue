@@ -39,14 +39,14 @@ abstract final class AppTextStyles {
   static const bodyMedium = TextStyle(
     fontSize: 13,
     fontWeight: FontWeight.w400,
-    color: AppColors.inkSecondary,
+    color: AppColors.ink2,
     height: 1.5,
   );
 
   static const bodySmall = TextStyle(
     fontSize: 11,
     fontWeight: FontWeight.w400,
-    color: AppColors.inkSecondary,
+    color: AppColors.ink2,
     height: 1.4,
   );
 
@@ -61,14 +61,14 @@ abstract final class AppTextStyles {
   static const labelMedium = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w600,
-    color: AppColors.inkSecondary,
+    color: AppColors.ink2,
     letterSpacing: 0.2,
   );
 
   static const labelSmall = TextStyle(
     fontSize: 10,
     fontWeight: FontWeight.w600,
-    color: AppColors.inkSecondary,
+    color: AppColors.ink2,
     letterSpacing: 0.5,
   );
 

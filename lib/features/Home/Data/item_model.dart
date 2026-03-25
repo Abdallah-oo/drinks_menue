@@ -1,7 +1,4 @@
-/// Represents the drink category for filtering.
 enum DrinkCategory { hot, iced, smoothie, mojito, tea }
-
-/// Immutable data model for a single menu item.
 class ItemModel {
   const ItemModel({
     required this.image,
@@ -17,9 +14,7 @@ class ItemModel {
   final String       price;
   final DrinkCategory category;
 
-  /// Convenience getter used by the Home filter tabs.
-  /// true  → appears under "Hot"
-  /// false → appears under "Iced"
+
   bool get isHot => category == DrinkCategory.hot;
 
   // ─── Menu Data ──────────────────────────────────────────────────────────────

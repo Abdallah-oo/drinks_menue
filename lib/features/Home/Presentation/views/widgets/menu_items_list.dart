@@ -72,7 +72,7 @@ class _EmptyState extends StatelessWidget {
                 ? 'No results for "$query"'
                 : 'No $tabLabel drinks yet',
             style: AppTextStyles.titleMedium.copyWith(
-              color: AppColors.inkSecondary,
+              color: AppColors.ink2,
             ),
           ),
           const SizedBox(height: AppSpacing.xs),

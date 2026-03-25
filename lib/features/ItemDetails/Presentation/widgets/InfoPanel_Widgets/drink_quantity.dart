@@ -73,7 +73,7 @@ final int curruntIndex;
           color: active ? AppColors.primary : AppColors.inkDisabled,
           shape: BoxShape.circle,
         ),
-        child: Icon(icon, color: Colors.white, size: 16),
+        child: Icon(icon, color: AppColors.surface, size: 16),
       ),
     );
   }
