@@ -39,6 +39,7 @@ class _HomeSearchBarState extends State<HomeSearchBar> {
           borderRadius: BorderRadius.circular(AppSpacing.radiusMd),
         ),
         child: TextField(
+          textInputAction: TextInputAction.search,
           onChanged: (value) => widget.onQueryChanged(value),
           controller: _searchController,
 
@@ -56,7 +57,7 @@ class _HomeSearchBarState extends State<HomeSearchBar> {
             ),
             suffixIcon: ValueListenableBuilder<TextEditingValue>(
               valueListenable: _searchController,
-              builder: (_, value, __) {
+              builder: (_, value, _) {
                 if (value.text.isEmpty) return const SizedBox.shrink();
                 return IconButton(
                   icon: const Icon(
@@ -65,7 +66,10 @@ class _HomeSearchBarState extends State<HomeSearchBar> {
                     size: 18,
                   ),
                   onPressed: () {
-                    _searchController.clear;
+                  _searchController.text = '';
+                    _searchController.selection = TextSelection.collapsed(
+                      offset: 0,
+                    );
                     widget.onQueryChanged('');
                   },
                 );

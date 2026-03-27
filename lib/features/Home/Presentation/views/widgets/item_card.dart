@@ -21,23 +21,37 @@ class ItemCard extends StatelessWidget {
 
     Future.delayed(Duration(milliseconds: isKeyboardOpen ? 50 : 0), () {
       if (!context.mounted) return;
-      Navigator.push(
+    Navigator.push(
         context,
         PageRouteBuilder(
-          pageBuilder: (_, animation, __) => ChangeNotifierProvider.value(
+          pageBuilder: (_, animation, _) => ChangeNotifierProvider.value(
             value: cartProvider,
             child: ItemDetailsView(initialIndex: index),
           ),
-          transitionsBuilder: (_, animation, __, child) {
+          transitionsBuilder: (_, animation, _, child) {
+            final slide =
+                Tween<Offset>(
+                  begin: const Offset(0, 0.06),
+                  end: Offset.zero,
+                ).animate(
+                  CurvedAnimation(
+                    parent: animation,
+                    curve: Curves.easeOutCubic,
+                  ),
+                );
+
+            final fade = CurvedAnimation(
+              parent: animation,
+              curve: Curves.easeOut,
+            );
+
             return FadeTransition(
-              opacity: CurvedAnimation(
-                parent: animation,
-                curve: Curves.easeOut,
-              ),
-              child: child,
+              opacity: fade,
+              child: SlideTransition(position: slide, child: child),
             );
           },
-          transitionDuration: const Duration(milliseconds: 400),
+          transitionDuration: const Duration(milliseconds: 450),
+          reverseTransitionDuration: const Duration(milliseconds: 350),
         ),
       );
     });

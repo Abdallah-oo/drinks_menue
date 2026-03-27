@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class HomeAppBar extends StatelessWidget {
-  const HomeAppBar();
+  const HomeAppBar({super.key});
 
   static String get greeting {
     final hour = DateTime.now().hour;

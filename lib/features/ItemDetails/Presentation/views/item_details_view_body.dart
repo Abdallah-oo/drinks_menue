@@ -51,8 +51,8 @@ class _ItemDetailsViewBodyState extends State<ItemDetailsViewBody> {
     final Color bgTint = _tintFor(current) ?? AppColors.surface;
 
     return AnimatedContainer(
-      duration: const Duration(milliseconds: 600),
-      curve: Curves.easeInOut,
+     duration: const Duration(milliseconds: 400),
+      curve: Curves.easeOutCubic,
       color: bgTint,
       child: SafeArea(
         child: Column(

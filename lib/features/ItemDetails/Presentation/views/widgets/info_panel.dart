@@ -81,7 +81,7 @@ class InfoPanel extends StatelessWidget {
                               child: SlideTransition(
                                 position:
                                     Tween<Offset>(
-                                      begin: const Offset(0.0, 0.05),
+                                     begin: const Offset(0.0, 0.12),
                                       end: Offset.zero,
                                     ).animate(
                                       CurvedAnimation(
@@ -97,7 +97,26 @@ class InfoPanel extends StatelessWidget {
                         ),
                       ),
                       AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 260),
+                         duration: const Duration(milliseconds: 260),
+                        transitionBuilder: (child, anim) => FadeTransition(
+                          opacity: CurvedAnimation(
+                            parent: anim,
+                            curve: Curves.easeOut,
+                          ),
+                          child: SlideTransition(
+                            position:
+                                Tween<Offset>(
+                                  begin: const Offset(0.0, 0.12),
+                                  end: Offset.zero,
+                                ).animate(
+                                  CurvedAnimation(
+                                    parent: anim,
+                                    curve: Curves.easeOut,
+                                  ),
+                                ),
+                            child: child,
+                          ),
+                        ),
                         child: DrinkPrice(
                           key: ValueKey('p_$curruntIndex'),
                           price: item.price,

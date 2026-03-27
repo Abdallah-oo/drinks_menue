@@ -3,6 +3,7 @@ import 'package:drinks_menue/core/utils/app_spacing.dart';
 import 'package:drinks_menue/core/utils/app_text_style.dart';
 import 'package:drinks_menue/core/utils/custom_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({super.key, required this.current, required this.total});
@@ -21,7 +22,10 @@ class TopBar extends StatelessWidget {
           // ── Back button ─────────────────────────────────────────────────
           _circleBtn(
             icon: Icons.arrow_back_ios_new_rounded,
-            onTap: () => Navigator.pop(context),
+           onTap: () {
+              HapticFeedback.lightImpact();
+              Navigator.pop(context);
+            },
           ),
 
           // ── Counter pill ────────────────────────────────────────────────
