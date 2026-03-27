@@ -2,10 +2,10 @@ import 'package:drinks_menue/core/extensions/responsive.dart';
 import 'package:drinks_menue/core/themes/colors.dart';
 import 'package:drinks_menue/core/utils/app_spacing.dart';
 import 'package:drinks_menue/features/Home/Data/item_model.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/widgets/InfoPanel_Widgets/add_to_cart_btn.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/widgets/InfoPanel_Widgets/drink_name.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/widgets/InfoPanel_Widgets/drink_price.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/widgets/InfoPanel_Widgets/drink_size.dart';
+import 'package:drinks_menue/features/ItemDetails/Presentation/views/widgets/InfoPanel_Widgets/add_to_cart_btn.dart';
+import 'package:drinks_menue/features/ItemDetails/Presentation/views/widgets/InfoPanel_Widgets/drink_name.dart';
+import 'package:drinks_menue/features/ItemDetails/Presentation/views/widgets/InfoPanel_Widgets/drink_price.dart';
+import 'package:drinks_menue/features/ItemDetails/Presentation/views/widgets/InfoPanel_Widgets/drink_size.dart';
 import 'package:flutter/material.dart';
 
 class InfoPanel extends StatelessWidget {

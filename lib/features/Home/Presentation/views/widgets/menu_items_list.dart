@@ -22,9 +22,8 @@ class ItemList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (items.isEmpty) {
-      return _EmptyState(query: query, tabLabel: tabLabel);
+      return _emptyState(query: query, tabLabel: tabLabel);
     }
-
 
     return ClipRect(
       child: ListView.builder(
@@ -43,18 +42,8 @@ class ItemList extends StatelessWidget {
       ),
     );
   }
-}
-
-// ─── Empty State ───────────────────────────────────────────────────────────────
-
-class _EmptyState extends StatelessWidget {
-  const _EmptyState({required this.query, required this.tabLabel});
-
-  final String query;
-  final String tabLabel;
-
-  @override
-  Widget build(BuildContext context) {
+  ///*empty state widget
+  Widget _emptyState({required String query, required String tabLabel}) {
     final isSearch = query.isNotEmpty;
 
     return Center(
@@ -71,9 +60,7 @@ class _EmptyState extends StatelessWidget {
             text: isSearch
                 ? 'No results for "$query"'
                 : 'No $tabLabel drinks yet',
-            style: AppTextStyles.titleMedium.copyWith(
-              color: AppColors.ink2,
-            ),
+            style: AppTextStyles.titleMedium.copyWith(color: AppColors.ink2),
           ),
           const SizedBox(height: AppSpacing.xs),
           CustomText(
@@ -85,3 +72,8 @@ class _EmptyState extends StatelessWidget {
     );
   }
 }
+
+// ─── Empty State ───────────────────────────────────────────────────────────────
+
+
+

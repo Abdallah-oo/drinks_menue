@@ -1,14 +1,5 @@
 import 'package:flutter/material.dart';
 
-/// Staggered entrance animation for list items.
-///
-/// Uses a pure fade — no slide, no scale.
-/// Slides and scale transforms on list cards tend to feel theatrical.
-/// A well-timed fade is invisible when done right and immediately
-/// feels native and polished when it's not there.
-///
-/// [index] controls the stagger offset so items appear
-/// one after another rather than all at once.
 class AnimatedListItem extends StatefulWidget {
   const AnimatedListItem({
     super.key,

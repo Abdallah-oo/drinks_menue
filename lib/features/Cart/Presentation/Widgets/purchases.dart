@@ -36,11 +36,7 @@ class _EmptyCartView extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            Icons.shopping_cart_outlined,
-            size: 72,
-            color: AppColors.ink2,
-          ),
+          Icon(Icons.shopping_cart_outlined, size: 72, color: AppColors.ink2),
           const SizedBox(height: 16),
           Text(
             'Your cart is empty',
@@ -88,26 +84,20 @@ class _OrderCard extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
           child: Row(
             children: [
-              _DrinkThumbnail(drink: drink),
+              _drinkThumbnail(drink: drink),
               const SizedBox(width: 12),
-              Expanded(child: _OrderInfo(drink: drink)),
-              _Controls(drink: drink, cart: cart),
+              Expanded(child: _drinkInfo(drink: drink)),
+              _controll(drink: drink, cart: cart),
             ],
           ),
         ),
       ),
     );
   }
-}
 
-// ─── Thumbnail + qty badge ────────────────────────────────────────────────────
-
-class _DrinkThumbnail extends StatelessWidget {
-  const _DrinkThumbnail({required this.drink});
-  final DrinkEntry drink;
-
-  @override
-  Widget build(BuildContext context) {
+  ///widgets
+  //DrinkThumbnail Widget
+  Widget _drinkThumbnail({required DrinkEntry drink}) {
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -151,16 +141,9 @@ class _DrinkThumbnail extends StatelessWidget {
       ],
     );
   }
-}
 
-// ─── Order Info ───────────────────────────────────────────────────────────────
-
-class _OrderInfo extends StatelessWidget {
-  const _OrderInfo({required this.drink});
-  final DrinkEntry drink;
-
-  @override
-  Widget build(BuildContext context) {
+  //order info widget
+  Widget _drinkInfo({required DrinkEntry drink}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -176,30 +159,42 @@ class _OrderInfo extends StatelessWidget {
         const SizedBox(height: 4),
         Row(
           children: [
-            _Tag(
+            _tag(
               label: drink.drink.isHot ? 'Hot' : 'Cold',
-              color: !drink.drink.isHot 
+              color: !drink.drink.isHot
                   ? const Color(0xFF2196F3)
                   : const Color(0xFFFF7043),
             ),
             const SizedBox(width: 6),
-            _Tag(label: drink.size, color: AppColors.primary),
+            _tag(label: drink.size, color: AppColors.primary),
           ],
         ),
       ],
     );
   }
-}
 
-// ─── Controls ─────────────────────────────────────────────────────────────────
+  //custom widget for _drinkInfo widget
 
-class _Controls extends StatelessWidget {
-  const _Controls({required this.drink, required this.cart});
-  final DrinkEntry drink;
-  final CartProvider cart;
+  Widget _tag({required String label, required Color color}) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.10),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Text(
+        label,
+        style: TextStyle(
+          fontSize: 11,
+          fontWeight: FontWeight.w600,
+          color: color,
+        ),
+      ),
+    );
+  }
 
-  @override
-  Widget build(BuildContext context) {
+  // amount controll
+  Widget _controll({required DrinkEntry drink, required CartProvider cart}) {
     final unitPrice = double.tryParse(drink.drink.price) ?? 0.0;
     final total = (unitPrice * drink.quantity).toStringAsFixed(2);
 
@@ -218,7 +213,7 @@ class _Controls extends StatelessWidget {
             ),
             child: const Icon(
               Icons.close_rounded,
-              color:AppColors.error,
+              color: AppColors.error,
               size: 14,
             ),
           ),
@@ -246,13 +241,11 @@ class _Controls extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _MiniBtn(
+              _minBtn(
                 icon: drink.quantity == 1
                     ? Icons.delete_outline_rounded
                     : Icons.remove_rounded,
-                color: drink.quantity == 1
-                    ? AppColors.error
-                    : AppColors.ink2,
+                color: drink.quantity == 1 ? AppColors.error : AppColors.ink2,
                 onTap: () => cart.decreaseQty(drink.key),
               ),
               SizedBox(
@@ -265,7 +258,7 @@ class _Controls extends StatelessWidget {
                   ),
                 ),
               ),
-              _MiniBtn(
+              _minBtn(
                 icon: Icons.add_rounded,
                 color: AppColors.primary,
                 onTap: () => cart.increaseQty(drink.key),
@@ -276,53 +269,20 @@ class _Controls extends StatelessWidget {
       ],
     );
   }
-}
 
-class _MiniBtn extends StatelessWidget {
-  const _MiniBtn({
-    required this.icon,
-    required this.color,
-    required this.onTap,
-  });
-  final IconData icon;
-  final Color color;
-  final VoidCallback onTap;
+  //   custom quantity btn for _controll widget
 
-  @override
-  Widget build(BuildContext context) {
+  Widget _minBtn({
+    required IconData icon,
+    required Color color,
+    required VoidCallback onTap,
+  }) {
     return GestureDetector(
       onTap: onTap,
       child: SizedBox(
         width: 28,
         height: 28,
         child: Icon(icon, color: color, size: 16),
-      ),
-    );
-  }
-}
-
-// ─── Pill Tag ─────────────────────────────────────────────────────────────────
-
-class _Tag extends StatelessWidget {
-  const _Tag({required this.label, required this.color});
-  final String label;
-  final Color color;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-      decoration: BoxDecoration(
-        color: color.withOpacity(0.10),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: Text(
-        label,
-        style: TextStyle(
-          fontSize: 11,
-          fontWeight: FontWeight.w600,
-          color: color,
-        ),
       ),
     );
   }

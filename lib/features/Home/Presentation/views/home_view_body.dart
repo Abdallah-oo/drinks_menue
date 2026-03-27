@@ -37,33 +37,34 @@ class _HomeViewBodyState extends State<HomeViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          HomeAppBar(),
-          const SizedBox(height: AppSpacing.md),
-          HomeSearchBar(
-            onQueryChanged: (query) => setState(() {
-              _query = query;
-            }),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        //appbar
+        SafeArea(child: HomeAppBar()),
+        const SizedBox(height: AppSpacing.md),
+        //search bar
+        HomeSearchBar(
+          onQueryChanged: (query) => setState(() {
+            _query = query;
+          }),
+        ),
+        const SizedBox(height: AppSpacing.md),
+        //Tabs Filter
+        CategoryTabs(
+          onCategoryChanged: (category) => setState(() {
+            _selectedTab = category;
+          }),
+        ),
+        const SizedBox(height: AppSpacing.sm),
+        Expanded(
+          child: ItemList(
+            items: items,
+            query: _query,
+            tabLabel: _selectedTab,
           ),
-          const SizedBox(height: AppSpacing.md),
-          CategoryTabs(
-            onCategoryChanged: (category) => setState(() {
-              _selectedTab = category;
-            }),
-          ),
-          const SizedBox(height: AppSpacing.sm),
-          Expanded(
-            child: ItemList(
-              items: items,
-              query: _query,
-              tabLabel: _selectedTab,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
