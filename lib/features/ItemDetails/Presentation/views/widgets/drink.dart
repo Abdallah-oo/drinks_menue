@@ -24,12 +24,14 @@ class Drink extends StatelessWidget {
       itemCount: drinks.length,
       scrollDirection: Axis.horizontal,
       clipBehavior: Clip.none, 
-      itemBuilder: (context, index) {
+   itemBuilder: (context, index) {
         final scale = drinkSize - (curruntPage - index).abs() * 1;
-        
-        final translateY = (curruntPage - index).abs() * (screenwidth * 0.8);
+
+      
+        final translateX = (curruntPage - index).abs() * (screenwidth * 0.75);
+
         return Transform.translate(
-          offset: Offset(translateY, 0),
+          offset: Offset(-translateX, 0), 
           child: Transform.scale(
             scale: scale.clamp(0.5, 1.0),
             child: Column(
