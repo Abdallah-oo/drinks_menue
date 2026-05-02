@@ -32,7 +32,7 @@
   </tr>
   <tr>
     <td align="center">
-      <img src="assets/screenshots/home_filterwithsearch.jpg" width="200" alt="Home – Filter with Search"/>
+      <img src="assets/screenshots/home_filter_with_search.jpg" width="200" alt="Home – Filter with Search"/>
       <br /><b>Home – Filter with Search</b>
     </td>
     <td align="center">
