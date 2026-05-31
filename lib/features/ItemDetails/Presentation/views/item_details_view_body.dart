@@ -54,31 +54,29 @@ class _ItemDetailsViewBodyState extends State<ItemDetailsViewBody> {
      duration: const Duration(milliseconds: 400),
       curve: Curves.easeOutCubic,
       color: bgTint,
-      child: SafeArea(
-        child: Column(
-          children: [
-            //app bar
-            TopBar(current: current, total: _items.length),
-           //drink view
-            Expanded(
-              child: Drink(
-                drinks: _items,
-                controller: _pageController,
-                curruntPage: _currentPage,
-              ),
+      child: Column(
+        children: [
+          //app bar
+          SafeArea(child: TopBar(current: current, total: _items.length)),
+         //drink view
+          Expanded(
+            child: Drink(
+              drinks: _items,
+              controller: _pageController,
+              curruntPage: _currentPage,
             ),
-           //drinks dots
-            DrinksDots(count: _items.length, current: _currentPage),
-           //info and and to cart btn
-            ChangeNotifierProvider(
-              create: (context) => SizeAndQtyProvider(),
-              child: InfoPanel(
-                items: _items,
-                curruntIndex: _currentPage.round(),
-              ),
+          ),
+         //drinks dots
+          DrinksDots(count: _items.length, current: _currentPage),
+         //info and and to cart btn
+          ChangeNotifierProvider(
+            create: (context) => SizeAndQtyProvider(),
+            child: InfoPanel(
+              items: _items,
+              curruntIndex: _currentPage.round(),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

@@ -15,7 +15,7 @@ class Drink extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final double screenHight = context.screenHeight * 0.48;
+    final double screenHight = context.screenHeight * 0.45;
     final double screenwidth = context.screenWidth * 0.2;
 
     double drinkSize = screenwidth / (screenwidth - 15);
@@ -31,7 +31,7 @@ class Drink extends StatelessWidget {
         final translateX = (curruntPage - index).abs() * (screenwidth * 0.75);
 
         return Transform.translate(
-          offset: Offset(-translateX, 0), 
+          offset: Offset(translateX, 0), 
           child: Transform.scale(
             scale: scale.clamp(0.5, 1.0),
             child: Column(
