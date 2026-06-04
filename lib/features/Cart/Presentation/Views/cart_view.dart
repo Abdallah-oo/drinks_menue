@@ -1,5 +1,5 @@
-import 'package:drinks_menue/core/themes/colors.dart';
-import 'package:drinks_menue/features/Cart/Presentation/Views/cart_view_body.dart';
+import 'package:cafe_app/core/themes/colors.dart';
+import 'package:cafe_app/features/Cart/Presentation/Views/cart_view_body.dart';
 import 'package:flutter/material.dart';
 
 class CartView extends StatelessWidget {

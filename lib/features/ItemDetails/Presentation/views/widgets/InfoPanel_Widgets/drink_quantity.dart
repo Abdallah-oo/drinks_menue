@@ -1,8 +1,8 @@
-import 'package:drinks_menue/core/themes/colors.dart';
-import 'package:drinks_menue/core/utils/app_spacing.dart';
-import 'package:drinks_menue/core/utils/app_text_style.dart';
-import 'package:drinks_menue/core/utils/custom_text.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/provider/size_and_qty_provider.dart';
+import 'package:cafe_app/core/themes/colors.dart';
+import 'package:cafe_app/core/utils/app_spacing.dart';
+import 'package:cafe_app/core/utils/app_text_style.dart';
+import 'package:cafe_app/core/utils/custom_text.dart';
+import 'package:cafe_app/features/ItemDetails/Presentation/provider/size_and_qty_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

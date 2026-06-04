@@ -1,9 +1,9 @@
-import 'package:drinks_menue/core/utils/app_spacing.dart';
-import 'package:drinks_menue/features/Home/Data/item_model.dart';
-import 'package:drinks_menue/features/Home/Presentation/views/widgets/category_taps.dart';
-import 'package:drinks_menue/features/Home/Presentation/views/widgets/home_app_bar.dart';
-import 'package:drinks_menue/features/Home/Presentation/views/widgets/home_search_bar.dart';
-import 'package:drinks_menue/features/Home/Presentation/views/widgets/menu_items_list.dart';
+import 'package:cafe_app/core/utils/app_spacing.dart';
+import 'package:cafe_app/features/Home/Data/item_model.dart';
+import 'package:cafe_app/features/Home/Presentation/views/widgets/category_taps.dart';
+import 'package:cafe_app/features/Home/Presentation/views/widgets/home_app_bar.dart';
+import 'package:cafe_app/features/Home/Presentation/views/widgets/home_search_bar.dart';
+import 'package:cafe_app/features/Home/Presentation/views/widgets/menu_items_list.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatefulWidget {

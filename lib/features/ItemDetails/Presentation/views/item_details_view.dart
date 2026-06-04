@@ -1,4 +1,4 @@
-import 'package:drinks_menue/features/ItemDetails/Presentation/views/item_details_view_body.dart';
+import 'package:cafe_app/features/ItemDetails/Presentation/views/item_details_view_body.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

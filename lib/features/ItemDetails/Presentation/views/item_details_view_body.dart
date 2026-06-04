@@ -1,10 +1,10 @@
-import 'package:drinks_menue/core/themes/colors.dart';
-import 'package:drinks_menue/features/Home/Data/item_model.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/provider/size_and_qty_provider.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/views/widgets/drink.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/views/widgets/drinks_dots.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/views/widgets/info_panel.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/views/widgets/top_bar.dart';
+import 'package:cafe_app/core/themes/colors.dart';
+import 'package:cafe_app/features/Home/Data/item_model.dart';
+import 'package:cafe_app/features/ItemDetails/Presentation/provider/size_and_qty_provider.dart';
+import 'package:cafe_app/features/ItemDetails/Presentation/views/widgets/drink.dart';
+import 'package:cafe_app/features/ItemDetails/Presentation/views/widgets/drinks_dots.dart';
+import 'package:cafe_app/features/ItemDetails/Presentation/views/widgets/info_panel.dart';
+import 'package:cafe_app/features/ItemDetails/Presentation/views/widgets/top_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

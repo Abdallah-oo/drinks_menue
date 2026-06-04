@@ -1,6 +1,6 @@
-import 'package:drinks_menue/core/themes/colors.dart';
-import 'package:drinks_menue/features/Home/Presentation/views/home_view_body.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/provider/cart_provider.dart';
+import 'package:cafe_app/core/themes/colors.dart';
+import 'package:cafe_app/features/Home/Presentation/views/home_view_body.dart';
+import 'package:cafe_app/features/ItemDetails/Presentation/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';

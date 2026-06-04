@@ -1,8 +1,8 @@
 import 'dart:ui';
-import 'package:drinks_menue/core/themes/colors.dart';
-import 'package:drinks_menue/core/utils/app_spacing.dart';
-import 'package:drinks_menue/core/utils/custom_button.dart';
-import 'package:drinks_menue/core/utils/custom_text.dart';
+import 'package:cafe_app/core/themes/colors.dart';
+import 'package:cafe_app/core/utils/app_spacing.dart';
+import 'package:cafe_app/core/utils/custom_button.dart';
+import 'package:cafe_app/core/utils/custom_text.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutSheet extends StatelessWidget {

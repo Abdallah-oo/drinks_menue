@@ -1,4 +1,4 @@
-import 'package:drinks_menue/features/Home/Data/item_model.dart';
+import 'package:cafe_app/features/Home/Data/item_model.dart';
 import 'package:flutter/widgets.dart';
 
 class DrinkEntry {

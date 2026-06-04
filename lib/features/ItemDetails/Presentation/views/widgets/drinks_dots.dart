@@ -1,8 +1,8 @@
 import 'dart:math' as math;
 
-import 'package:drinks_menue/core/extensions/responsive.dart';
-import 'package:drinks_menue/core/themes/colors.dart';
-import 'package:drinks_menue/core/utils/app_spacing.dart';
+import 'package:cafe_app/core/extensions/responsive.dart';
+import 'package:cafe_app/core/themes/colors.dart';
+import 'package:cafe_app/core/utils/app_spacing.dart';
 import 'package:flutter/material.dart';
 
 class DrinksDots extends StatelessWidget {

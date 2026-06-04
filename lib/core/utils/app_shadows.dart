@@ -1,4 +1,4 @@
-import 'package:drinks_menue/core/themes/colors.dart';
+import 'package:cafe_app/core/themes/colors.dart';
 import 'package:flutter/material.dart';
 
 /// Reusable shadow presets — consistent elevation across the app.

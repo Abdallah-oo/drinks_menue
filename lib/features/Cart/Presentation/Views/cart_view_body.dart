@@ -1,9 +1,9 @@
-import 'package:drinks_menue/core/themes/colors.dart';
-import 'package:drinks_menue/core/utils/app_spacing.dart';
-import 'package:drinks_menue/core/utils/custom_button.dart';
-import 'package:drinks_menue/features/Cart/Presentation/Views/Widgets/checkout_sheet.dart';
-import 'package:drinks_menue/features/Cart/Presentation/Views/Widgets/purchases.dart';
-import 'package:drinks_menue/features/ItemDetails/Presentation/provider/cart_provider.dart';
+import 'package:cafe_app/core/themes/colors.dart';
+import 'package:cafe_app/core/utils/app_spacing.dart';
+import 'package:cafe_app/core/utils/custom_button.dart';
+import 'package:cafe_app/features/Cart/Presentation/Views/Widgets/checkout_sheet.dart';
+import 'package:cafe_app/features/Cart/Presentation/Views/Widgets/purchases.dart';
+import 'package:cafe_app/features/ItemDetails/Presentation/provider/cart_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';

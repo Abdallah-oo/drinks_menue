@@ -1,5 +1,5 @@
-import 'package:drinks_menue/core/themes/colors.dart';
-import 'package:drinks_menue/features/Home/Presentation/views/home_view.dart';
+import 'package:cafe_app/core/themes/colors.dart';
+import 'package:cafe_app/features/Home/Presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 
 void main() {

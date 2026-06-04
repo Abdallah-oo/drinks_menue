@@ -1,10 +1,10 @@
-import 'package:drinks_menue/core/themes/colors.dart';
-import 'package:drinks_menue/core/utils/app_spacing.dart';
-import 'package:drinks_menue/core/utils/app_text_style.dart';
-import 'package:drinks_menue/core/utils/custom_text.dart';
-import 'package:drinks_menue/features/Home/Data/item_model.dart';
-import 'package:drinks_menue/features/Home/Presentation/helper/animated_list_item.dart';
-import 'package:drinks_menue/features/Home/Presentation/views/widgets/item_card.dart';
+import 'package:cafe_app/core/themes/colors.dart';
+import 'package:cafe_app/core/utils/app_spacing.dart';
+import 'package:cafe_app/core/utils/app_text_style.dart';
+import 'package:cafe_app/core/utils/custom_text.dart';
+import 'package:cafe_app/features/Home/Data/item_model.dart';
+import 'package:cafe_app/features/Home/Presentation/helper/animated_list_item.dart';
+import 'package:cafe_app/features/Home/Presentation/views/widgets/item_card.dart';
 import 'package:flutter/material.dart';
 
 class ItemList extends StatelessWidget {

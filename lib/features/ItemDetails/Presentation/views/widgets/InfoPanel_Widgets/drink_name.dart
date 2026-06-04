@@ -1,7 +1,7 @@
-import 'package:drinks_menue/core/utils/app_spacing.dart';
-import 'package:drinks_menue/core/utils/app_text_style.dart';
-import 'package:drinks_menue/core/utils/custom_text.dart';
-import 'package:drinks_menue/features/Home/Data/item_model.dart';
+import 'package:cafe_app/core/utils/app_spacing.dart';
+import 'package:cafe_app/core/utils/app_text_style.dart';
+import 'package:cafe_app/core/utils/custom_text.dart';
+import 'package:cafe_app/features/Home/Data/item_model.dart';
 import 'package:flutter/material.dart';
 
 class DrinkName extends StatelessWidget {

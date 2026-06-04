@@ -1,5 +1,5 @@
-import 'package:drinks_menue/core/extensions/responsive.dart';
-import 'package:drinks_menue/features/Home/Data/item_model.dart';
+import 'package:cafe_app/core/extensions/responsive.dart';
+import 'package:cafe_app/features/Home/Data/item_model.dart';
 import 'package:flutter/material.dart';
 
 class Drink extends StatelessWidget {
