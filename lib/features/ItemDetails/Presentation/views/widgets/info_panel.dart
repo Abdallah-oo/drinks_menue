@@ -40,7 +40,7 @@ class InfoPanel extends StatelessWidget {
         0,
       ),
       child: SingleChildScrollView(
-        key: PageStorageKey('info_$curruntIndex'),
+
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -89,7 +89,7 @@ class InfoPanel extends StatelessWidget {
                           child: child,
                         ),
                       ),
-                      child: DrinkName(key: ValueKey(curruntIndex), item: item),
+                      child: DrinkName( item: item),
                     ),
                   ),
                 ),
@@ -127,7 +127,7 @@ class InfoPanel extends StatelessWidget {
             const SizedBox(height: AppSpacing.md),
 
             // ── Size ──────────────────────────────────────────────────────
-            DrinkSize(curruntIndex: curruntIndex),
+            DrinkSize(key: PageStorageKey('info_$curruntIndex') ,curruntIndex: curruntIndex),
             SafeArea(
               child: AddToCartBtn(items: items, curruntIndex: curruntIndex),
             ),
